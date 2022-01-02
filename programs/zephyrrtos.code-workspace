@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "i2c_demo",
+			"path": "i2c_demo"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "c",
+			"*.tcc": "c"
+		}
+	}
+}
