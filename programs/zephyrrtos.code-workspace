@@ -9,6 +9,11 @@
 		"files.associations": {
 			"cmath": "c",
 			"*.tcc": "c"
-		}
+		},
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:1.7.1}",
+		"nrf-connect.topdir": "${nrf-connect.sdk:1.7.1}",
+		"nrf-connect.applications": [
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\logging_demo"
+		]
 	}
 }

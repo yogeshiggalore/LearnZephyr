@@ -15,20 +15,22 @@
 #include <sys/printk.h>
 #include <device.h>
 #include <drivers/i2c.h>
-#include <SFE_BMP180.h>
+#include <BMP180.h>
+#include <stdio.h>
 
 #define MAX_I2C_ADDRESS	127
 
-#define TSL2561_ADDRESS	0x39
-#define BMP180_ADDRESS	0x77
+#define ALTITUDE	763.0
 
 /* device structure */
 const struct device *i2c_dev;
 
+double Temp, Pres, PresSealvl, Alt;
+
+char status;
+
 /* functions */
 void i2c_scan_devices(void);
-static int read_bytes(const struct device *i2c_dev, uint16_t addr,uint8_t *data, uint32_t num_bytes);
-
 
 void main(void)
 {
@@ -52,45 +54,37 @@ void main(void)
 	/* scan i2c devices */
 	scan_i2c_devices();
 	
-	/*uint8_t write_buf[16];
-	uint8_t read_buf[16];
-	int ret;
-
-	write_buf[0] = 0xAA;
-	ret = i2c_write_read(i2c_dev,BMP180_ADDRESS,&write_buf,1,&read_buf,2);
-	printk("%2x\n",ret);
-	printk("%2x\n",read_buf[0]);
-	printk("%2x\n",read_buf[1]);
-
 	k_sleep(K_SECONDS(1));
 
-	write_buf[0] = 0;
-	write_buf[1] = 0xAA;
-	read_buf[0] = 0;
-	read_buf[1] = 0;
-	ret = i2c_write_read(i2c_dev,BMP180_ADDRESS,&write_buf,2,&read_buf,2);
-	printk("%2x\n",ret);
-	printk("%2x\n",read_buf[0]);
-	printk("%2x\n",read_buf[1]);
-
-	k_sleep(K_SECONDS(1));*/
-
-	i2c_begin(i2c_dev);
+	/* start bmp180 read */
+	printf("setting up BMP180 \n");
+	BMP180_Begin(i2c_dev);
 	
 	/* while loop */
 	while(1)
 	{
-		k_sleep(K_SECONDS(1));
-		double T;
-		char status;
-		status = getTemperature(i2c_dev,&T);
+
+		status = BMP180_StartTemperature(i2c_dev);
+		if(status !=0)
+		{
+			k_msleep(status);
+		}
+		
+		status = BMP180_GetTemperature(i2c_dev,&Temp);
     	if (status != 0)
     	{
-      		// Print out the measurement:
-      		printk("temperature: ");
-      		printk("%d\n",T*10);
+			k_msleep(status);
+			status = BMP180_StartPressure(i2c_dev,3);
+			if(status != 0 )
+			{
+				PresSealvl = BMP180_Sealevel(Pres,ALTITUDE);
+				Alt = BMP180_Altitude(Pres, PresSealvl);
+				printf("Temp:%.2fc Pres:%.2fmb Alt:%.2fm\n",Temp,(Pres*0.0295333727 *25.4),Alt);
+			}
 		}
 	}
+
+	k_sleep(K_SECONDS(1));
 }
 
 void scan_i2c_devices(void)
@@ -129,42 +123,9 @@ void scan_i2c_devices(void)
 			printk("-- ");
 		}
 
-		
-
 		/* 100 ms sleep */
 		k_sleep(K_MSEC(100));	
 	}
 	printk("\n\nstopped scanning i2c devices\n");
 
-}
-
-//void i2c_read_byte(const struct device *i2c_dev, uint16_t addr,uint8_t *data, uint32_t num_bytes, uint8_t *error)
-//{
-
-//}
-
-static int read_bytes(const struct device *i2c_dev, uint16_t addr,uint8_t *data, uint32_t num_bytes)
-{
-	uint8_t wr_addr[2];
-	struct i2c_msg msgs[2];
-
-	/* Now try to read back from FRAM */
-
-	/* FRAM address */
-	wr_addr[0] = (addr >> 8) & 0xFF;
-	wr_addr[1] = addr & 0xFF;
-
-	/* Setup I2C messages */
-
-	/* Send the address to read from */
-	msgs[0].buf = wr_addr;
-	msgs[0].len = 2U;
-	msgs[0].flags = I2C_MSG_WRITE;
-
-	/* Read from device. STOP after this. */
-	msgs[1].buf = data;
-	msgs[1].len = num_bytes;
-	msgs[1].flags = I2C_MSG_READ | I2C_MSG_STOP;
-
-	return i2c_transfer(i2c_dev, &msgs[0], 2, BMP180_ADDRESS);
 }

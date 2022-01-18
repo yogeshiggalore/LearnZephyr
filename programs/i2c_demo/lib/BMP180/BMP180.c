@@ -1,27 +1,17 @@
 /*
 	SFE_BMP180.cpp
 	Bosch BMP180 pressure sensor library for the Arduino microcontroller
-	Mike Grusin, SparkFun Electronics
-
 	Uses floating-point equations from the Weather Station Data Logger project
 	http://wmrx00.sourceforge.net/
 	http://wmrx00.sourceforge.net/Arduino/BMP085-Calcs.pdf
 
-	Forked from BMP085 library by M.Grusin
-
-	version 1.0 2013/09/20 initial version
-	Verison 1.1.2 - Updated for Arduino 1.6.4 5/2015
-
-	Our example code uses the "beerware" license. You can do anything
-	you like with this code. No really, anything. If you find it useful,
-	buy me a (root) beer someday.
 */
 
 #include <zephyr.h>
 #include <sys/printk.h>
 #include <device.h>
 #include <drivers/i2c.h>
-#include <SFE_BMP180.h>
+#include <BMP180.h>
 #include <stdio.h>
 #include <math.h>
 
@@ -30,7 +20,7 @@ uint16_t AC4, AC5, AC6;
 double c5, c6, mc, md, x0, x1, x2, y0, y1, y2, p0, p1, p2;
 char _error;
 
-char i2c_begin(const struct device *i2c_dev)
+char BMP180_Begin(const struct device *i2c_dev)
 // Initialize library for subsequent pressure measurements
 {
 	double c3,c4,b1;
@@ -43,17 +33,17 @@ char i2c_begin(const struct device *i2c_dev)
 
 	// Retrieve calibration data from device:
 	
-	if (i2c_readInt(i2c_dev,0xAA,&AC1) &&
-		i2c_readInt(i2c_dev,0xAC,&AC2) &&
-		i2c_readInt(i2c_dev,0xAE,&AC3) &&
-		i2c_readUInt(i2c_dev,0xB0,&AC4) &&
-		i2c_readUInt(i2c_dev,0xB2,&AC5) &&
-		i2c_readUInt(i2c_dev,0xB4,&AC6) &&
-		i2c_readInt(i2c_dev,0xB6,&VB1) &&
-		i2c_readInt(i2c_dev,0xB8,&VB2) &&
-		i2c_readInt(i2c_dev,0xBA,&MB) &&
-		i2c_readInt(i2c_dev,0xBC,&MC) &&
-		i2c_readInt(i2c_dev,0xBE,&MD))
+	if (BMP180_ReadInt(i2c_dev,0xAA,&AC1) &&
+		BMP180_ReadInt(i2c_dev,0xAC,&AC2) &&
+		BMP180_ReadInt(i2c_dev,0xAE,&AC3) &&
+		BMP180_ReadUInt(i2c_dev,0xB0,&AC4) &&
+		BMP180_ReadUInt(i2c_dev,0xB2,&AC5) &&
+		BMP180_ReadUInt(i2c_dev,0xB4,&AC6) &&
+		BMP180_ReadInt(i2c_dev,0xB6,&VB1) &&
+		BMP180_ReadInt(i2c_dev,0xB8,&VB2) &&
+		BMP180_ReadInt(i2c_dev,0xBA,&MB) &&
+		BMP180_ReadInt(i2c_dev,0xBC,&MC) &&
+		BMP180_ReadInt(i2c_dev,0xBE,&MD))
 	{
 
 		// All reads completed successfully!
@@ -132,7 +122,7 @@ char i2c_begin(const struct device *i2c_dev)
 }
 
 
-char i2c_readInt(const struct device *i2c_dev,char address, int16_t *value)
+char BMP180_ReadInt(const struct device *i2c_dev,char address, int16_t *value)
 // Read a signed integer (two bytes) from device
 // address: register to start reading (plus subsequent register)
 // value: external variable to store data (function modifies value)
@@ -140,7 +130,7 @@ char i2c_readInt(const struct device *i2c_dev,char address, int16_t *value)
 	unsigned char data[2];
 
 	data[0] = address;
-	if (i2c_readBytes(i2c_dev,data,2))
+	if (BMP180_ReadBytes(i2c_dev,data,2))
 	{
 		*value = (int16_t)((data[0]<<8)|data[1]);
 		//if (*value & 0x8000) *value |= 0xFFFF0000; // sign extend if negative
@@ -151,7 +141,7 @@ char i2c_readInt(const struct device *i2c_dev,char address, int16_t *value)
 }
 
 
-char i2c_readUInt(const struct device *i2c_dev,char address, uint16_t *value)
+char BMP180_ReadUInt(const struct device *i2c_dev,char address, uint16_t *value)
 // Read an unsigned integer (two bytes) from device
 // address: register to start reading (plus subsequent register)
 // value: external variable to store data (function modifies value)
@@ -159,7 +149,7 @@ char i2c_readUInt(const struct device *i2c_dev,char address, uint16_t *value)
 	unsigned char data[2];
 
 	data[0] = address;
-	if (i2c_readBytes(i2c_dev,data,2))
+	if (BMP180_ReadBytes(i2c_dev,data,2))
 	{
 		*value = (((uint16_t)data[0]<<8)|(uint16_t)data[1]);
 		return(1);
@@ -169,7 +159,7 @@ char i2c_readUInt(const struct device *i2c_dev,char address, uint16_t *value)
 }
 
 
-char i2c_readBytes(const struct device *i2c_dev,unsigned char *values, char length)
+char BMP180_ReadBytes(const struct device *i2c_dev,unsigned char *values, char length)
 // Read an array of bytes from device
 // values: external array to hold data. Put starting register in values[0].
 // length: number of bytes to read
@@ -177,10 +167,10 @@ char i2c_readBytes(const struct device *i2c_dev,unsigned char *values, char leng
 
 	if(i2c_write_read(i2c_dev,BMP180_ADDR,&values[0],1,&values[0],length) == 0)
 	{
-		//printk("i2c_readBytes sucess\n");
+		//printk("BMP180_ReadBytes sucess\n");
 		return 1;
 	}else{
-		printk("i2c_readBytes fail\n");
+		printk("BMP180_ReadBytes fail\n");
 		return 0;
 	}
 	
@@ -188,19 +178,19 @@ char i2c_readBytes(const struct device *i2c_dev,unsigned char *values, char leng
 }
 
 
-char i2c_writeBytes(const struct device *i2c_dev,unsigned char *values, char length)
+char BMP180_WriteBytes(const struct device *i2c_dev,unsigned char *values, char length)
 // Write an array of bytes to device
 // values: external array of data to write. Put starting register in values[0].
 // length: number of bytes to write
 {
 	if(i2c_write(i2c_dev,values,length,BMP180_ADDR) == 0)
 	{
-		//printk("i2c_writeBytes sucess\n");
+		//printk("BMP180_WriteBytes sucess\n");
 		return 1;
 	}
 	else
 	{
-		printk("i2c_writeBytes fail\n");
+		printk("BMP180_WriteBytes fail\n");
 		return 0;
 	}
 	
@@ -208,7 +198,7 @@ char i2c_writeBytes(const struct device *i2c_dev,unsigned char *values, char len
 }
 
 
-char startTemperature(const struct device *i2c_dev)
+char BMP180_StartTemperature(const struct device *i2c_dev)
 // Begin a temperature reading.
 // Will return delay in ms to wait, or 0 if I2C error
 {
@@ -216,7 +206,7 @@ char startTemperature(const struct device *i2c_dev)
 	
 	data[0] = BMP180_REG_CONTROL;
 	data[1] = BMP180_COMMAND_TEMPERATURE;
-	result = i2c_writeBytes(i2c_dev,data, 2);
+	result = BMP180_WriteBytes(i2c_dev,data, 2);
 	if (result) // good write?
 		return(5); // return the delay in ms (rounded up) to wait before retrieving data
 	else
@@ -224,10 +214,10 @@ char startTemperature(const struct device *i2c_dev)
 }
 
 
-char getTemperature(const struct device *i2c_dev,double *T)
+char BMP180_GetTemperature(const struct device *i2c_dev,double *T)
 // Retrieve a previously-started temperature reading.
 // Requires begin() to be called once prior to retrieve calibration parameters.
-// Requires startTemperature() to have been called prior and sufficient time elapsed.
+// Requires BMP180_StartTemperature() to have been called prior and sufficient time elapsed.
 // T: external variable to hold result.
 // Returns 1 if successful, 0 if I2C error.
 {
@@ -237,7 +227,7 @@ char getTemperature(const struct device *i2c_dev,double *T)
 	
 	data[0] = BMP180_REG_RESULT;
 
-	result = i2c_readBytes(i2c_dev,data, 2);
+	result = BMP180_ReadBytes(i2c_dev,data, 2);
 	if (result) // good read, calculate temperature
 	{
 		tu = (data[0] * 256.0) + data[1];
@@ -262,7 +252,7 @@ char getTemperature(const struct device *i2c_dev,double *T)
 }
 
 
-char startPressure(const struct device *i2c_dev,char oversampling)
+char BMP180_StartPressure(const struct device *i2c_dev,char oversampling)
 // Begin a pressure reading.
 // Oversampling: 0 to 3, higher numbers are slower, higher-res outputs.
 // Will return delay in ms to wait, or 0 if I2C error.
@@ -294,7 +284,7 @@ char startPressure(const struct device *i2c_dev,char oversampling)
 			delay = 5;
 		break;
 	}
-	result = i2c_writeBytes(i2c_dev,data, 2);
+	result = BMP180_WriteBytes(i2c_dev,data, 2);
 	if (result) // good write?
 		return(delay); // return the delay in ms (rounded up) to wait before retrieving data
 	else
@@ -302,17 +292,17 @@ char startPressure(const struct device *i2c_dev,char oversampling)
 }
 
 
-char getPressure(const struct device *i2c_dev,double *P, double *T)
+char BMP180_GetPressure(const struct device *i2c_dev,double *P, double *T)
 // Retrieve a previously started pressure reading, calculate abolute pressure in mbars.
 // Requires begin() to be called once prior to retrieve calibration parameters.
-// Requires startPressure() to have been called prior and sufficient time elapsed.
+// Requires BMP180_StartPressure() to have been called prior and sufficient time elapsed.
 // Requires recent temperature reading to accurately calculate pressure.
 
 // P: external variable to hold pressure.
 // T: previously-calculated temperature.
 // Returns 1 for success, 0 for I2C error.
 
-// Note that calculated pressure value is absolute mbars, to compensate for altitude call sealevel().
+// Note that calculated pressure value is absolute mbars, to compensate for BMP180_Altitude call BMP180_Sealevel().
 {
 	unsigned char data[3];
 	char result;
@@ -320,7 +310,7 @@ char getPressure(const struct device *i2c_dev,double *P, double *T)
 	
 	data[0] = BMP180_REG_RESULT;
 
-	result = i2c_readBytes(i2c_dev,data, 3);
+	result = BMP180_ReadBytes(i2c_dev,data, 3);
 	if (result) // good read, calculate pressure
 	{
 		pu = (data[0] * 256.0) + data[1] + (data[2]/256.0);
@@ -352,8 +342,8 @@ char getPressure(const struct device *i2c_dev,double *P, double *T)
 }
 
 
-double sealevel(double P, double A)
-// Given a pressure P (mb) taken at a specific altitude (meters),
+double BMP180_Sealevel(double P, double A)
+// Given a pressure P (mb) taken at a specific BMP180_Altitude (meters),
 // return the equivalent pressure (mb) at sea level.
 // This produces pressure readings that can be used for weather measurements.
 {
@@ -361,15 +351,15 @@ double sealevel(double P, double A)
 }
 
 
-double altitude(double P, double P0)
+double BMP180_Altitude(double P, double P0)
 // Given a pressure measurement P (mb) and the pressure at a baseline P0 (mb),
-// return altitude (meters) above baseline.
+// return BMP180_Altitude (meters) above baseline.
 {
 	return(44330.0*(1-pow(P/P0,1/5.255)));
 }
 
 
-char getError(void)
+char BMP180_GetError(void)
 	// If any library command fails, you can retrieve an extended
 	// error code using this command. Errors are from the wire library: 
 	// 0 = Success
