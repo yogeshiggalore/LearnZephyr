@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "logging_demo",
+			"path": "logging_demo"
+		},
+		{
+			"name": "spi_master_demo",
+			"path": "spi_master_demo"
+		},
+		{
+			"name": "uart_polling_demo",
+			"path": "uart_polling_demo"
+		},
+		{
+			"name": "led_demo",
+			"path": "led_demo"
+		}
+	],
+	"settings": {
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:1.8.0}",
+		"nrf-connect.topdir": "${nrf-connect.sdk:1.8.0}",
+		"nrf-connect.applications": [
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\logging_demo",
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\spi_master_demo",
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\uart_polling_demo",
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\led_demo"
+		],
+		"files.associations": {
+			"gpio.h": "c"
+		}
+	}
+}
