@@ -19,6 +19,10 @@
 		{
 			"name": "pwm_led_fade_in_out",
 			"path": "pwm_led_fade_in_out"
+		},
+		{
+			"name": "uart_interrupt_demo",
+			"path": "uart_interrupt_demo"
 		}
 	],
 	"settings": {
@@ -29,11 +33,13 @@
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\spi_master_demo",
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\uart_polling_demo",
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\led_demo",
-			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\pwm_led_fade_in_out"
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\pwm_led_fade_in_out",
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\uart_interrupt_demo"
 		],
 		"files.associations": {
 			"gpio.h": "c",
-			"pwm.h": "c"
+			"pwm.h": "c",
+			"uart.h": "c"
 		}
 	}
 }

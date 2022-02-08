@@ -17,38 +17,48 @@
 #include <drivers/gpio.h>
 #include <device.h>
 #include <sys/printk.h>
+#include <string.h>
+#include <errno.h>
 
 /* spi structures */
-struct spi_config spi_cfg;
-struct device *dev_spi;
-struct device *dev_gpio0;
+struct spi_config cfg_spi;
+const struct device *dev_spi;
+const struct device *dev_gpio0;
 struct spi_cs_control spi_cs;
 struct spi_buf spi_tx_buf;
 
 /* register the log */
 LOG_MODULE_REGISTER(spidemo, LOG_LEVEL_DBG);
 
-void spi_test_write(void);
+int spi2_master_write(struct device *spi, struct spi_config *cfg_spi, char *data);
+
+char spi_data[10] = {'t','e','s','t','i','n','g','S','P','I'};
 
 void main(void)
 {
-	/* start delay */
-	k_sleep(K_SECONDS(5));
+	/* startup delay */
+	k_sleep(K_SECONDS(1));
 
 	LOG_INF("spi demo device restarted ");
 
-	spi_cfg.frequency = 4000000;
-	spi_cfg.operation = (SPI_WORD_SET(8) | SPI_TRANSFER_MSB);
-	spi_cfg.slave = 0;
+	cfg_spi.frequency = 1000000;
+	cfg_spi.operation = (SPI_WORD_SET(8) | SPI_TRANSFER_MSB);
+	cfg_spi.slave = 0;
 	spi_cs.delay = 0;
 	spi_cs.gpio_dev = dev_gpio0;
 	spi_cs.gpio_dt_flags = GPIO_ACTIVE_LOW;
 	spi_cs.gpio_pin = 22;
-	spi_cfg.cs = &spi_cs;
+	cfg_spi.cs = &spi_cs;
 
 	/* get device binding */
- 	dev_spi = device_get_binding("SPI_2");
+	dev_spi = device_get_binding("SPI_2");
 	dev_gpio0 = device_get_binding("GPIO_0");
+
+	LOG_INF("%s: master config @ %p:" " wordsize(%u), mode(%u/%u/%u)", __func__, &cfg_spi,
+            SPI_WORD_SIZE_GET(cfg_spi.operation),
+            (SPI_MODE_GET(cfg_spi.operation) & SPI_MODE_CPOL) ? 1 : 0,
+            (SPI_MODE_GET(cfg_spi.operation) & SPI_MODE_CPHA) ? 1 : 0,
+            (SPI_MODE_GET(cfg_spi.operation) & SPI_MODE_LOOP) ? 1 : 0);
 
 	if (dev_spi == NULL)
 	{
@@ -70,39 +80,29 @@ void main(void)
 		LOG_INF("gpio0 device binding sucess");
 	}
 
-	gpio_pin_configure(dev_gpio0,spi_cs.gpio_pin,(GPIO_OUTPUT | spi_cs.gpio_dt_flags));
+	gpio_pin_configure(dev_gpio0, spi_cs.gpio_pin, (GPIO_OUTPUT | spi_cs.gpio_dt_flags));
 
-	LOG_INF("pin:%d", spi_cfg.cs->gpio_pin);
+	LOG_INF("pin:%d", cfg_spi.cs->gpio_pin);
 
 	while (1)
 	{
-		k_sleep(K_MSEC(500));
-		spi_test_write();
+		k_sleep(K_MSEC(1000));
+		spi2_master_write(dev_spi, &cfg_spi, spi_data);
+		LOG_INF("spi2_master_write");
 	}
 }
 
-void spi_test_write(void)
+int spi2_master_write(struct device *spi, struct spi_config *cfg_spi, char *data)
 {
-	uint8_t tx_buffer[5] = {0xA5,0xA4,0xA3,0xA2,0xA1};
-	int err;
+	struct spi_buf bufs = {
+		.buf = data,
+		.len = 10
+	};
 
-	const struct spi_buf tx_buf = {
-		.buf = tx_buffer,
-		.len = sizeof(tx_buffer)};
-	const struct spi_buf_set tx = {
-		.buffers = &tx_buf,
-		.count = 1};
+	struct spi_buf_set tx = {
+		.buffers = &bufs
+	};
 
-
-	err = spi_write(dev_spi, &spi_cfg, &tx);
-
-	if (err)
-	{
-		LOG_ERR("SPI error: %d", err);
-	}
-	else
-	{
-		/* Connect MISO to MOSI for loopback */
-		LOG_INF("TX sent: %d", tx_buffer[0]);
-	}
+	tx.count = 1;
+	return spi_write(spi, cfg_spi, &tx);
 }
