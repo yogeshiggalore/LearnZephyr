@@ -1,0 +1,16 @@
+# private config option for uart mp3 app
+
+config MP3_PLAYER
+    bool "Enable MP3 API's"
+    default n
+    help
+        zephyr config to enable mp3 player APIs
+
+if MP3_PLAYER
+    config SERIAL
+        default y
+    config UART_INTERRUPT_DRIVEN
+        default y
+    config UART_ASYNC_API
+        default y
+endif

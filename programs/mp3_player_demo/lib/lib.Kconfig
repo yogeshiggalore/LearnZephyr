@@ -1,0 +1,3 @@
+# private config option for lib
+
+rsource "mp3/mp3.Kconfig"

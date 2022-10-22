@@ -1,0 +1,16 @@
+# private config option for uart mp3 app
+
+config YX5300
+    bool "Enable YX5300 MP3 API's"
+    default n
+    depends on SERIAL
+    help
+        zephyr config to enable YX5300 player APIs
+
+if  YX5300
+    config UART_INTERRUPT_DRIVEN
+        default y
+    config SERIAL
+        default y 
+
+endif

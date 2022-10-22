@@ -11,6 +11,14 @@
 		{
 			"name": "spi_master_demo",
 			"path": "spi_master_demo"
+		},
+		{
+			"name": "stm32_test",
+			"path": "C:\\Users\\yoges\\OneDrive\\Documents\\PlatformIO\\Projects\\stm32_test"
+		},
+		{
+			"name": "stm32_zephyr",
+			"path": "C:\\Users\\yoges\\OneDrive\\Documents\\PlatformIO\\Projects\\stm32_zephyr"
 		}
 	],
 	"settings": {

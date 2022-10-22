@@ -23,18 +23,28 @@
 		{
 			"name": "uart_interrupt_demo",
 			"path": "uart_interrupt_demo"
+		},
+		{
+			"name": "mp3_player_demo",
+			"path": "mp3_player_demo"
+		},
+		{
+			"name": "ble_beacon_demo",
+			"path": "ble_beacon_demo"
 		}
 	],
 	"settings": {
-		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:1.8.0}",
-		"nrf-connect.topdir": "${nrf-connect.sdk:1.8.0}",
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:1.9.1}",
+		"nrf-connect.topdir": "${nrf-connect.sdk:1.9.1}",
 		"nrf-connect.applications": [
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\logging_demo",
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\spi_master_demo",
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\uart_polling_demo",
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\led_demo",
 			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\pwm_led_fade_in_out",
-			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\uart_interrupt_demo"
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\uart_interrupt_demo",
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\mp3_player_demo",
+			"d:\\projects\\learnzephyr\\github\\LearnZephyr\\programs\\ble_beacon_demo"
 		],
 		"files.associations": {
 			"gpio.h": "c",

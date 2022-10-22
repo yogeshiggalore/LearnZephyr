@@ -1,0 +1,2 @@
+rsource "lib/lib.Kconfig"
+source "Kconfig.zephyr"

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>D:\projects\learnzephyr\github\LearnZephyr\hardware\nrf52840_addon\nrf52840_addon\nrf52840_addon.kicad_sch</source>
+    <date>11-10-2022 22:57:54</date>
+    <tool>Eeschema (6.0.8)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>nrf52840_addon.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>NRF52840-DK</value>
+      <footprint>NRF52840-DK:MODULE_NRF52840-DK</footprint>
+      <fields>
+        <field name="AVAILABILITY">Unavailable</field>
+        <field name="DESCRIPTION">DEVELOPMENT KIT FOR nRF52840</field>
+        <field name="MF">Nordic Semiconductor</field>
+        <field name="MP">NRF52840-DK</field>
+        <field name="PACKAGE">None</field>
+        <field name="PRICE">None</field>
+      </fields>
+      <libsource lib="NRF52840-DK" part="NRF52840-DK" description=""/>
+      <property name="PRICE" value="None"/>
+      <property name="DESCRIPTION" value="DEVELOPMENT KIT FOR nRF52840"/>
+      <property name="AVAILABILITY" value="Unavailable"/>
+      <property name="MP" value="NRF52840-DK"/>
+      <property name="MF" value="Nordic Semiconductor"/>
+      <property name="PACKAGE" value="None"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: nrf52840_addon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>05b71824-0dbd-4e24-814a-6bdf22971ebd</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="NRF52840-DK" part="NRF52840-DK">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NRF52840-DK</field>
+        <field name="Footprint">MODULE_NRF52840-DK</field>
+        <field name="PRICE">None</field>
+        <field name="DESCRIPTION">DEVELOPMENT KIT FOR nRF52840</field>
+        <field name="AVAILABILITY">Unavailable</field>
+        <field name="MP">NRF52840-DK</field>
+        <field name="MF">Nordic Semiconductor</field>
+        <field name="PACKAGE">None</field>
+      </fields>
+      <pins>
+        <pin num="P1_1" name="VIO" type="power_in"/>
+        <pin num="P1_2" name="VIO" type="power_in"/>
+        <pin num="P1_3" name="RESET_P1" type="input"/>
+        <pin num="P1_4" name="VIO" type="power_in"/>
+        <pin num="P1_5" name="V5V" type="power_in"/>
+        <pin num="P1_6" name="GND" type="power_in"/>
+        <pin num="P1_7" name="GND" type="power_in"/>
+        <pin num="P1_8" name="VIN" type="power_in"/>
+        <pin num="P1_11" name="VIO" type="power_in"/>
+        <pin num="P1_12" name="VIO" type="power_in"/>
+        <pin num="P1_13" name="RESET_P1" type="input"/>
+        <pin num="P1_14" name="VIO" type="power_in"/>
+        <pin num="P1_15" name="V5V" type="power_in"/>
+        <pin num="P1_16" name="GND" type="power_in"/>
+        <pin num="P1_17" name="GND" type="power_in"/>
+        <pin num="P1_18" name="VIN" type="power_in"/>
+        <pin num="P1_31" name="VIO" type="power_in"/>
+        <pin num="P1_32" name="VIO" type="power_in"/>
+        <pin num="P1_33" name="RESET_P1" type="input"/>
+        <pin num="P1_34" name="VIO" type="power_in"/>
+        <pin num="P1_35" name="V5V" type="power_in"/>
+        <pin num="P1_36" name="GND" type="power_in"/>
+        <pin num="P1_37" name="GND" type="power_in"/>
+        <pin num="P1_38" name="VIN" type="power_in"/>
+        <pin num="P1_41" name="VIO" type="power_in"/>
+        <pin num="P1_42" name="VIO" type="power_in"/>
+        <pin num="P1_43" name="RESET_P1" type="input"/>
+        <pin num="P1_44" name="VIO" type="power_in"/>
+        <pin num="P1_45" name="V5V" type="power_in"/>
+        <pin num="P1_46" name="GND" type="power_in"/>
+        <pin num="P1_47" name="GND" type="power_in"/>
+        <pin num="P1_48" name="VIN" type="power_in"/>
+        <pin num="P2_1" name="P0.03/AIN1" type="bidirectional"/>
+        <pin num="P2_2" name="P0.04/AIN2" type="bidirectional"/>
+        <pin num="P2_3" name="P0.28/AIN4" type="bidirectional"/>
+        <pin num="P2_4" name="P0.29/AIN5" type="bidirectional"/>
+        <pin num="P2_5" name="P0.30/AIN6" type="bidirectional"/>
+        <pin num="P2_6" name="P0.31/AIN7" type="bidirectional"/>
+        <pin num="P2_11" name="P0.03/AIN1" type="bidirectional"/>
+        <pin num="P2_12" name="P0.04/AIN2" type="bidirectional"/>
+        <pin num="P2_13" name="P0.28/AIN4" type="bidirectional"/>
+        <pin num="P2_14" name="P0.29/AIN5" type="bidirectional"/>
+        <pin num="P2_15" name="P0.30/AIN6" type="bidirectional"/>
+        <pin num="P2_16" name="P0.31/AIN7" type="bidirectional"/>
+        <pin num="P2_31" name="P0.03/AIN1" type="bidirectional"/>
+        <pin num="P2_32" name="P0.04/AIN2" type="bidirectional"/>
+        <pin num="P2_33" name="P0.28/AIN4" type="bidirectional"/>
+        <pin num="P2_34" name="P0.29/AIN5" type="bidirectional"/>
+        <pin num="P2_35" name="P0.30/AIN6" type="bidirectional"/>
+        <pin num="P2_36" name="P0.31/AIN7" type="bidirectional"/>
+        <pin num="P2_41" name="P0.03/AIN1" type="bidirectional"/>
+        <pin num="P2_42" name="P0.04/AIN2" type="bidirectional"/>
+        <pin num="P2_43" name="P0.28/AIN4" type="bidirectional"/>
+        <pin num="P2_44" name="P0.29/AIN5" type="bidirectional"/>
+        <pin num="P2_45" name="P0.30/AIN6" type="bidirectional"/>
+        <pin num="P2_46" name="P0.31/AIN7" type="bidirectional"/>
+        <pin num="P3_1" name="P1.01" type="bidirectional"/>
+        <pin num="P3_2" name="P1.02" type="bidirectional"/>
+        <pin num="P3_3" name="P1.03" type="bidirectional"/>
+        <pin num="P3_4" name="P1.04" type="bidirectional"/>
+        <pin num="P3_5" name="P1.05" type="bidirectional"/>
+        <pin num="P3_6" name="P1.06" type="bidirectional"/>
+        <pin num="P3_7" name="P1.07" type="bidirectional"/>
+        <pin num="P3_8" name="P1.08" type="bidirectional"/>
+        <pin num="P3_11" name="P1.01" type="bidirectional"/>
+        <pin num="P3_12" name="P1.02" type="bidirectional"/>
+        <pin num="P3_13" name="P1.03" type="bidirectional"/>
+        <pin num="P3_14" name="P1.04" type="bidirectional"/>
+        <pin num="P3_15" name="P1.05" type="bidirectional"/>
+        <pin num="P3_16" name="P1.06" type="bidirectional"/>
+        <pin num="P3_17" name="P1.07" type="bidirectional"/>
+        <pin num="P3_18" name="P1.08" type="bidirectional"/>
+        <pin num="P3_31" name="P1.01" type="bidirectional"/>
+        <pin num="P3_32" name="P1.02" type="bidirectional"/>
+        <pin num="P3_33" name="P1.03" type="bidirectional"/>
+        <pin num="P3_34" name="P1.04" type="bidirectional"/>
+        <pin num="P3_35" name="P1.05" type="bidirectional"/>
+        <pin num="P3_36" name="P1.06" type="bidirectional"/>
+        <pin num="P3_37" name="P1.07" type="bidirectional"/>
+        <pin num="P3_38" name="P1.08" type="bidirectional"/>
+        <pin num="P3_41" name="P1.01" type="bidirectional"/>
+        <pin num="P3_42" name="P1.02" type="bidirectional"/>
+        <pin num="P3_43" name="P1.03" type="bidirectional"/>
+        <pin num="P3_44" name="P1.04" type="bidirectional"/>
+        <pin num="P3_45" name="P1.05" type="bidirectional"/>
+        <pin num="P3_46" name="P1.06" type="bidirectional"/>
+        <pin num="P3_47" name="P1.07" type="bidirectional"/>
+        <pin num="P3_48" name="P1.08" type="bidirectional"/>
+        <pin num="P4_1" name="P1.10" type="bidirectional"/>
+        <pin num="P4_2" name="P1.11" type="bidirectional"/>
+        <pin num="P4_3" name="P1.12" type="bidirectional"/>
+        <pin num="P4_4" name="P1.13" type="bidirectional"/>
+        <pin num="P4_5" name="P1.14" type="bidirectional"/>
+        <pin num="P4_6" name="P1.15" type="bidirectional"/>
+        <pin num="P4_7" name="GND" type="power_in"/>
+        <pin num="P4_8" name="P0.02/AIN0" type="bidirectional"/>
+        <pin num="P4_9" name="SDA" type="bidirectional"/>
+        <pin num="P4_10" name="SCL" type="input"/>
+        <pin num="P4_11" name="P1.10" type="bidirectional"/>
+        <pin num="P4_12" name="P1.11" type="bidirectional"/>
+        <pin num="P4_13" name="P1.12" type="bidirectional"/>
+        <pin num="P4_14" name="P1.13" type="bidirectional"/>
+        <pin num="P4_15" name="P1.14" type="bidirectional"/>
+        <pin num="P4_16" name="P1.15" type="bidirectional"/>
+        <pin num="P4_17" name="GND" type="power_in"/>
+        <pin num="P4_18" name="P0.02/AIN0" type="bidirectional"/>
+        <pin num="P4_19" name="SDA" type="bidirectional"/>
+        <pin num="P4_20" name="SCL" type="input"/>
+        <pin num="P4_31" name="P1.10" type="bidirectional"/>
+        <pin num="P4_32" name="P1.11" type="bidirectional"/>
+        <pin num="P4_33" name="P1.12" type="bidirectional"/>
+        <pin num="P4_34" name="P1.13" type="bidirectional"/>
+        <pin num="P4_35" name="P1.14" type="bidirectional"/>
+        <pin num="P4_36" name="P1.15" type="bidirectional"/>
+        <pin num="P4_37" name="GND" type="power_in"/>
+        <pin num="P4_38" name="P0.02/AIN0" type="bidirectional"/>
+        <pin num="P4_39" name="SDA" type="bidirectional"/>
+        <pin num="P4_40" name="SCL" type="input"/>
+        <pin num="P4_41" name="P1.10" type="bidirectional"/>
+        <pin num="P4_42" name="P1.11" type="bidirectional"/>
+        <pin num="P4_43" name="P1.12" type="bidirectional"/>
+        <pin num="P4_44" name="P1.13" type="bidirectional"/>
+        <pin num="P4_45" name="P1.14" type="bidirectional"/>
+        <pin num="P4_46" name="P1.15" type="bidirectional"/>
+        <pin num="P4_47" name="GND" type="power_in"/>
+        <pin num="P4_48" name="P0.02/AIN0" type="bidirectional"/>
+        <pin num="P4_49" name="SDA" type="bidirectional"/>
+        <pin num="P4_50" name="SCL" type="input"/>
+        <pin num="P5_1" name="P1.14_S2" type="bidirectional"/>
+        <pin num="P5_2" name="5V" type="power_in"/>
+        <pin num="P5_3" name="P1.15_S2" type="bidirectional"/>
+        <pin num="P5_4" name="P1.13_S2" type="bidirectional"/>
+        <pin num="P5_5" name="RESET_P5" type="input"/>
+        <pin num="P5_6" name="DETECT" type="bidirectional"/>
+        <pin num="P5_11" name="P1.14_S2" type="bidirectional"/>
+        <pin num="P5_22" name="5V" type="power_in"/>
+        <pin num="P5_33" name="P1.15_S2" type="bidirectional"/>
+        <pin num="P5_44" name="P1.13_S2" type="bidirectional"/>
+        <pin num="P5_55" name="RESET_P5" type="input"/>
+        <pin num="P5_66" name="DETECT" type="bidirectional"/>
+        <pin num="P6_1" name="P0.00" type="bidirectional"/>
+        <pin num="P6_2" name="P0.01" type="bidirectional"/>
+        <pin num="P6_3" name="P0.05/AIN3" type="bidirectional"/>
+        <pin num="P6_4" name="P0.06" type="bidirectional"/>
+        <pin num="P6_5" name="P0.07" type="bidirectional"/>
+        <pin num="P6_6" name="P0.08" type="bidirectional"/>
+        <pin num="P6_7" name="D20" type="bidirectional"/>
+        <pin num="P6_8" name="D21" type="bidirectional"/>
+        <pin num="P6_11" name="P0.00" type="bidirectional"/>
+        <pin num="P6_12" name="P0.01" type="bidirectional"/>
+        <pin num="P6_13" name="P0.05/AIN3" type="bidirectional"/>
+        <pin num="P6_14" name="P0.06" type="bidirectional"/>
+        <pin num="P6_15" name="P0.07" type="bidirectional"/>
+        <pin num="P6_16" name="P0.08" type="bidirectional"/>
+        <pin num="P6_17" name="D20" type="bidirectional"/>
+        <pin num="P6_18" name="D21" type="bidirectional"/>
+        <pin num="P6_31" name="P0.00" type="bidirectional"/>
+        <pin num="P6_32" name="P0.01" type="bidirectional"/>
+        <pin num="P6_33" name="P0.05/AIN3" type="bidirectional"/>
+        <pin num="P6_34" name="P0.06" type="bidirectional"/>
+        <pin num="P6_35" name="P0.07" type="bidirectional"/>
+        <pin num="P6_36" name="P0.08" type="bidirectional"/>
+        <pin num="P6_37" name="D20" type="bidirectional"/>
+        <pin num="P6_38" name="D21" type="bidirectional"/>
+        <pin num="P6_41" name="P0.00" type="bidirectional"/>
+        <pin num="P6_42" name="P0.01" type="bidirectional"/>
+        <pin num="P6_43" name="P0.05/AIN3" type="bidirectional"/>
+        <pin num="P6_44" name="P0.06" type="bidirectional"/>
+        <pin num="P6_45" name="P0.07" type="bidirectional"/>
+        <pin num="P6_46" name="P0.08" type="bidirectional"/>
+        <pin num="P6_47" name="D20" type="bidirectional"/>
+        <pin num="P6_48" name="D21" type="bidirectional"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="NRF52840-DK">
+      <uri>D:/projects/learnzephyr/github/LearnZephyr/hardware/nrf52840_addon/kicad_library/NRF52840-DK/NRF52840-DK.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V">
+      <node ref="U1" pin="P1_15" pinfunction="V5V" pintype="power_in"/>
+      <node ref="U1" pin="P1_35" pinfunction="V5V" pintype="power_in"/>
+      <node ref="U1" pin="P1_45" pinfunction="V5V" pintype="power_in"/>
+      <node ref="U1" pin="P1_5" pinfunction="V5V" pintype="power_in"/>
+    </net>
+    <net code="2" name="GND">
+      <node ref="U1" pin="P1_16" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_17" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_36" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_37" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_46" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_47" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_6" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P1_7" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P4_17" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P4_37" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P4_47" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="P4_7" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="3" name="unconnected-(U1-PadP1_1)">
+      <node ref="U1" pin="P1_1" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_11" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_12" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_14" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_2" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_31" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_32" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_34" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_4" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_41" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_42" pinfunction="VIO" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_44" pinfunction="VIO" pintype="power_in+no_connect"/>
+    </net>
+    <net code="4" name="unconnected-(U1-PadP1_13)">
+      <node ref="U1" pin="P1_13" pinfunction="RESET_P1" pintype="input+no_connect"/>
+      <node ref="U1" pin="P1_3" pinfunction="RESET_P1" pintype="input+no_connect"/>
+      <node ref="U1" pin="P1_33" pinfunction="RESET_P1" pintype="input+no_connect"/>
+      <node ref="U1" pin="P1_43" pinfunction="RESET_P1" pintype="input+no_connect"/>
+    </net>
+    <net code="5" name="unconnected-(U1-PadP1_18)">
+      <node ref="U1" pin="P1_18" pinfunction="VIN" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_38" pinfunction="VIN" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_48" pinfunction="VIN" pintype="power_in+no_connect"/>
+      <node ref="U1" pin="P1_8" pinfunction="VIN" pintype="power_in+no_connect"/>
+    </net>
+    <net code="6" name="unconnected-(U1-PadP2_1)">
+      <node ref="U1" pin="P2_1" pinfunction="P0.03/AIN1" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_11" pinfunction="P0.03/AIN1" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_31" pinfunction="P0.03/AIN1" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_41" pinfunction="P0.03/AIN1" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="7" name="unconnected-(U1-PadP2_12)">
+      <node ref="U1" pin="P2_12" pinfunction="P0.04/AIN2" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_2" pinfunction="P0.04/AIN2" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_32" pinfunction="P0.04/AIN2" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_42" pinfunction="P0.04/AIN2" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="8" name="unconnected-(U1-PadP2_13)">
+      <node ref="U1" pin="P2_13" pinfunction="P0.28/AIN4" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_3" pinfunction="P0.28/AIN4" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_33" pinfunction="P0.28/AIN4" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_43" pinfunction="P0.28/AIN4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="9" name="unconnected-(U1-PadP2_14)">
+      <node ref="U1" pin="P2_14" pinfunction="P0.29/AIN5" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_34" pinfunction="P0.29/AIN5" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_4" pinfunction="P0.29/AIN5" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_44" pinfunction="P0.29/AIN5" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="10" name="unconnected-(U1-PadP2_15)">
+      <node ref="U1" pin="P2_15" pinfunction="P0.30/AIN6" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_35" pinfunction="P0.30/AIN6" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_45" pinfunction="P0.30/AIN6" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_5" pinfunction="P0.30/AIN6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="11" name="unconnected-(U1-PadP2_16)">
+      <node ref="U1" pin="P2_16" pinfunction="P0.31/AIN7" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_36" pinfunction="P0.31/AIN7" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_46" pinfunction="P0.31/AIN7" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P2_6" pinfunction="P0.31/AIN7" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="12" name="unconnected-(U1-PadP3_1)">
+      <node ref="U1" pin="P3_1" pinfunction="P1.01" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_11" pinfunction="P1.01" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_31" pinfunction="P1.01" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_41" pinfunction="P1.01" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="13" name="unconnected-(U1-PadP3_12)">
+      <node ref="U1" pin="P3_12" pinfunction="P1.02" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_2" pinfunction="P1.02" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_32" pinfunction="P1.02" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_42" pinfunction="P1.02" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="14" name="unconnected-(U1-PadP3_13)">
+      <node ref="U1" pin="P3_13" pinfunction="P1.03" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_3" pinfunction="P1.03" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_33" pinfunction="P1.03" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_43" pinfunction="P1.03" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(U1-PadP3_14)">
+      <node ref="U1" pin="P3_14" pinfunction="P1.04" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_34" pinfunction="P1.04" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_4" pinfunction="P1.04" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_44" pinfunction="P1.04" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="16" name="unconnected-(U1-PadP3_15)">
+      <node ref="U1" pin="P3_15" pinfunction="P1.05" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_35" pinfunction="P1.05" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_45" pinfunction="P1.05" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_5" pinfunction="P1.05" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="17" name="unconnected-(U1-PadP3_16)">
+      <node ref="U1" pin="P3_16" pinfunction="P1.06" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_36" pinfunction="P1.06" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_46" pinfunction="P1.06" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_6" pinfunction="P1.06" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="18" name="unconnected-(U1-PadP3_17)">
+      <node ref="U1" pin="P3_17" pinfunction="P1.07" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_37" pinfunction="P1.07" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_47" pinfunction="P1.07" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_7" pinfunction="P1.07" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="19" name="unconnected-(U1-PadP3_18)">
+      <node ref="U1" pin="P3_18" pinfunction="P1.08" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_38" pinfunction="P1.08" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_48" pinfunction="P1.08" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P3_8" pinfunction="P1.08" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="20" name="unconnected-(U1-PadP4_1)">
+      <node ref="U1" pin="P4_1" pinfunction="P1.10" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_11" pinfunction="P1.10" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_31" pinfunction="P1.10" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_41" pinfunction="P1.10" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="21" name="unconnected-(U1-PadP4_10)">
+      <node ref="U1" pin="P4_10" pinfunction="SCL" pintype="input+no_connect"/>
+      <node ref="U1" pin="P4_20" pinfunction="SCL" pintype="input+no_connect"/>
+      <node ref="U1" pin="P4_40" pinfunction="SCL" pintype="input+no_connect"/>
+      <node ref="U1" pin="P4_50" pinfunction="SCL" pintype="input+no_connect"/>
+    </net>
+    <net code="22" name="unconnected-(U1-PadP4_12)">
+      <node ref="U1" pin="P4_12" pinfunction="P1.11" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_2" pinfunction="P1.11" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_32" pinfunction="P1.11" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_42" pinfunction="P1.11" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="23" name="unconnected-(U1-PadP4_13)">
+      <node ref="U1" pin="P4_13" pinfunction="P1.12" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_3" pinfunction="P1.12" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_33" pinfunction="P1.12" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_43" pinfunction="P1.12" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="24" name="unconnected-(U1-PadP4_14)">
+      <node ref="U1" pin="P4_14" pinfunction="P1.13" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_34" pinfunction="P1.13" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_4" pinfunction="P1.13" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_44" pinfunction="P1.13" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="25" name="unconnected-(U1-PadP4_15)">
+      <node ref="U1" pin="P4_15" pinfunction="P1.14" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_35" pinfunction="P1.14" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_45" pinfunction="P1.14" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_5" pinfunction="P1.14" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="26" name="unconnected-(U1-PadP4_16)">
+      <node ref="U1" pin="P4_16" pinfunction="P1.15" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_36" pinfunction="P1.15" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_46" pinfunction="P1.15" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_6" pinfunction="P1.15" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="27" name="unconnected-(U1-PadP4_18)">
+      <node ref="U1" pin="P4_18" pinfunction="P0.02/AIN0" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_38" pinfunction="P0.02/AIN0" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_48" pinfunction="P0.02/AIN0" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_8" pinfunction="P0.02/AIN0" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="28" name="unconnected-(U1-PadP4_19)">
+      <node ref="U1" pin="P4_19" pinfunction="SDA" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_39" pinfunction="SDA" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_49" pinfunction="SDA" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P4_9" pinfunction="SDA" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="29" name="unconnected-(U1-PadP6_1)">
+      <node ref="U1" pin="P6_1" pinfunction="P0.00" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_11" pinfunction="P0.00" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_31" pinfunction="P0.00" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_41" pinfunction="P0.00" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="30" name="unconnected-(U1-PadP6_12)">
+      <node ref="U1" pin="P6_12" pinfunction="P0.01" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_2" pinfunction="P0.01" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_32" pinfunction="P0.01" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_42" pinfunction="P0.01" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="31" name="unconnected-(U1-PadP6_13)">
+      <node ref="U1" pin="P6_13" pinfunction="P0.05/AIN3" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_3" pinfunction="P0.05/AIN3" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_33" pinfunction="P0.05/AIN3" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_43" pinfunction="P0.05/AIN3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="32" name="unconnected-(U1-PadP6_14)">
+      <node ref="U1" pin="P6_14" pinfunction="P0.06" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_34" pinfunction="P0.06" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_4" pinfunction="P0.06" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_44" pinfunction="P0.06" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="33" name="unconnected-(U1-PadP6_15)">
+      <node ref="U1" pin="P6_15" pinfunction="P0.07" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_35" pinfunction="P0.07" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_45" pinfunction="P0.07" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_5" pinfunction="P0.07" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(U1-PadP6_16)">
+      <node ref="U1" pin="P6_16" pinfunction="P0.08" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_36" pinfunction="P0.08" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_46" pinfunction="P0.08" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_6" pinfunction="P0.08" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="35" name="unconnected-(U1-PadP6_17)">
+      <node ref="U1" pin="P6_17" pinfunction="D20" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_37" pinfunction="D20" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_47" pinfunction="D20" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_7" pinfunction="D20" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="36" name="unconnected-(U1-PadP6_18)">
+      <node ref="U1" pin="P6_18" pinfunction="D21" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_38" pinfunction="D21" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_48" pinfunction="D21" pintype="bidirectional+no_connect"/>
+      <node ref="U1" pin="P6_8" pinfunction="D21" pintype="bidirectional+no_connect"/>
+    </net>
+  </nets>
+</export>

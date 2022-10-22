@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "nrf52_dk_shield")(type "KiCad")(uri "D:/projects/learnzephyr/github/LearnZephyr/hardware/nrf52840_addon/kicad_library/nrf52840_shield/nrf52840_dk_shield.kicad_sym")(options "")(descr ""))
+  (lib (name "arduino")(type "Legacy")(uri "D:/projects/learnkicad/kicad_lib/arduino_shield/arduino.lib")(options "")(descr ""))
+  (lib (name "TFT_144_SPI")(type "KiCad")(uri "D:/projects/learnzephyr/github/LearnZephyr/hardware/nrf52840_addon/kicad_library/TFT_144Inch/TFT_144_SPI.kicad_sym")(options "")(descr ""))
+  (lib (name "WS2818B")(type "Legacy")(uri "D:/projects/learnzephyr/github/LearnZephyr/hardware/nrf52840_addon/kicad_library/WS2812B-B/WS2812B-B.lib")(options "")(descr ""))
+)

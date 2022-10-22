@@ -19,6 +19,7 @@
 #include <drivers/uart.h>
 #include <logging/log.h>
 
+
 /* register the log */
 LOG_MODULE_REGISTER(uartdemo, LOG_LEVEL_DBG);
 
@@ -35,25 +36,28 @@ static void uart0_cb(const struct device *dev, void *user_data);
 
 static uint8_t uart0_buf[256];
 
+void write_to_uart(char array[], uint8_t len);
+
+
 void main(void)
 {
 	/* start delay for smooth log */
 	k_sleep(K_SECONDS(1));
 
 	/* print project name */
-	LOG_INF("zephyr uart interrupt demo");
+	//LOG_INF("zephyr uart interrupt demo");
 
 	/* get uart0 device binding */
 	dev_uart0 = device_get_binding(uart0port);
 
 	if(dev_uart0 == NULL)
 	{
-		LOG_ERR("device binding to port uart0 failed");
+		//LOG_ERR("device binding to port uart0 failed");
 		return;
 	}
 	else
 	{
-		LOG_INF("device binding to port uart0 sucess");
+		//LOG_INF("device binding to port uart0 sucess");
 	}
 
 	/* uart configuration */
@@ -67,17 +71,23 @@ void main(void)
 	int ret = uart_configure(dev_uart0, &cfg_uart0);
 	if(ret != 0)
 	{
-		LOG_ERR("uart0 configuration failed");
+		//LOG_ERR("uart0 configuration failed");
 		return;		
 	}
 	else
 	{
-		LOG_INF("uart0 configuration sucess");
+		//LOG_INF("uart0 configuration sucess");
 	} 
 
 	int uart1_data = 3;
     uart_irq_callback_user_data_set(dev_uart0, uart0_cb, &uart1_data);
 	uart_irq_rx_enable(dev_uart0);
+
+	k_sleep(K_SECONDS(1));
+	//LOG_INF("zephyr uart interrupt demo");
+
+	uint8_t aui8tx[8] = {0x7E,0xFF,0x06,0x03,0x00,0x00,0x10,0xEF};
+	write_to_uart(aui8tx,sizeof(aui8tx));
 }
 
 static void uart0_cb(const struct device *dev, void *user_data)
@@ -92,4 +102,13 @@ static void uart0_cb(const struct device *dev, void *user_data)
 	}
 
 	printk("%s\n", uart0_buf);
+}
+
+void write_to_uart(char array[], uint8_t len)
+{
+    
+    for(uint8_t i=0; i < len;i++)
+    {
+        uart_poll_out(dev_uart0,array[i]);
+    }
 }
