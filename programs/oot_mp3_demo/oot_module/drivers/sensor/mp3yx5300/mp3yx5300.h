@@ -21,3 +21,4 @@ struct mp3yx5300_config
 };
 
 #endif /* ZEPHYR_DRIVERS_SENSOR_EMADE9000_EMADE9000_H_ */
+

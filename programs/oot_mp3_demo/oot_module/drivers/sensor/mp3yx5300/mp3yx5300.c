@@ -187,6 +187,7 @@ static const struct sensor_driver_api mp3yx5300_api_funs = {
 /* Create the struct device for every status "okay" node in the devicetree. */
 DT_INST_FOREACH_STATUS_OKAY(MP3YX5300_DEFINE)
 
+
 //.uart_cfg.baudrate = DT_INST_PROP(inst, current_speed), \
 //		.uart_cfg.data_bits = DT_INST_PROP(inst, data_bits), \
 //		.uart_cfg.parity = DT_INST_PROP(inst, parity), \
