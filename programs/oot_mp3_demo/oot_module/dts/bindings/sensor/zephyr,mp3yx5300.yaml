@@ -1,0 +1,8 @@
+# Copyright (c) 2024 unknow
+# SPDX-License-Identifier: Apache-2.0
+
+description: serial mp3 player yx5300
+
+compatible: "zephyr,mp3yx5300"
+
+include: uart-device.yaml

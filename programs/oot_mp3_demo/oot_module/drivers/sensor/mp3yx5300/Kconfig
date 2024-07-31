@@ -1,0 +1,9 @@
+# EMINV energy meter interface Sensor configuration options
+# Copyright (c) 2024 ubaid
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig MP3_YX5300
+	bool "serial mp3 player yx5300"
+	depends on UART_INTERRUPT_DRIVEN
+	help
+	  Enable driver for the serial mp3 player yx5300

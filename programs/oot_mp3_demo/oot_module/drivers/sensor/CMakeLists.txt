@@ -1,0 +1,1 @@
+add_subdirectory_ifdef(CONFIG_MP3_YX5300 mp3yx5300)

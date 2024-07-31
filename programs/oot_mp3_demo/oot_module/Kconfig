@@ -1,0 +1,6 @@
+menu "OOT module"
+
+rsource "drivers/Kconfig"
+
+endmenu
+
